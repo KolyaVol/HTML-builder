@@ -6,5 +6,7 @@ const readStream = fs.createReadStream(filePath);
 readStream.on("data", (chunk) => {
   try {
     console.log(chunk.toString());
-  } catch (error) {}
+  } catch (error) {
+    throw error;
+  }
 });
