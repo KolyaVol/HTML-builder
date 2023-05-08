@@ -19,5 +19,3 @@ const srcDir = path.join(__dirname, "files");
 const destDir = path.join(__dirname, "files-copy");
 
 copyDir(srcDir, destDir);
-
-

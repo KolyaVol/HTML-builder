@@ -7,15 +7,17 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-const filePath1 = path.join(__dirname, "text.txt");
-const writeStream = fs.createWriteStream(filePath1);
+const filePath = path.join(__dirname, "text.txt");
+const writeStream = fs.createWriteStream(filePath);
 
 rl.question("Введите текст: ", (text) => {
   try {
     writeStream.write(text);
     console.log("Текст сохранен в файл text.txt");
     askQuestion();
-  } catch (error) {throw error}
+  } catch (error) {
+    throw error;
+  }
 });
 
 function askQuestion() {
