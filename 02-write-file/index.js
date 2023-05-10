@@ -11,6 +11,10 @@ const filePath = path.join(__dirname, "text.txt");
 const writeStream = fs.createWriteStream(filePath);
 
 rl.question("Введите текст: ", (text) => {
+  if (text === "exit") {
+    rl.close();
+    return;
+  }
   try {
     writeStream.write(text);
     console.log("Текст сохранен в файл text.txt");
